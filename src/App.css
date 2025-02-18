@@ -1,0 +1,30 @@
+@import "tailwindcss";
+
+
+@keyframes dotAppearInline {
+    0% {
+        opacity: 0;
+        transform: translateY(0);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes blinkInline {
+
+    0%,
+    50%,
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    25%,
+    75% {
+        opacity: 0;
+        transform: translateY(0);
+    }
+}
