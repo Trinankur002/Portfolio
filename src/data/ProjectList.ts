@@ -26,5 +26,10 @@ export const ProjectList : ProjectCardProps[] = [
         details: 'Built a meditation app for Android using Kotlin and Jetpack Compose.  Features include guided meditations, customizable timers, calming soundscapes, and progress tracking to promote mindfulness and relaxation.',
         link: 'https://github.com/Trinankur002/Take-Care',
     },
+    {
+        name: 'Portfolio',
+        details: 'This is my portfolio build with react , tailwind ',
+        link: 'https://github.com/Trinankur002/Portfolio',
+    },
 
 ]
