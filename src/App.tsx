@@ -3,7 +3,7 @@ import "tailwindcss";
 import { ProjectList } from './data/ProjectList';
 import Projectcard from './components/Projectcard';
 import { AboutMe } from './data/AboutMe';
-import React, { useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 
 function App() {
   const dotsRef = useRef<HTMLSpanElement>(null);
