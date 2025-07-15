@@ -4,6 +4,7 @@ import { ProjectList } from './data/ProjectList';
 import Projectcard from './components/Projectcard';
 import ContactForm from './components/ContactForm';
 import SkillsSection from './components/SkillsSection';
+import CareerSection from './components/CareerSection';
 import TypewriterText from './components/TypewriterText';
 import { AboutMe } from './data/AboutMe';
 import { useEffect, useRef, useState } from 'react';
@@ -161,6 +162,14 @@ function App() {
             </li>
             <li>
               <a
+                href="#career"
+                className="text-gray-300 hover:text-teal-400 transition-colors duration-300 font-medium"
+              >
+                Career
+              </a>
+            </li>
+            <li>
+              <a
                 href="#projects"
                 className="text-gray-300 hover:text-teal-400 transition-colors duration-300 font-medium"
               >
@@ -221,6 +230,15 @@ function App() {
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   Skills
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#career"
+                  className="text-gray-300 hover:text-teal-400 transition-colors duration-300 font-medium text-xl block py-2"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Career
                 </a>
               </li>
               <li>
@@ -439,6 +457,9 @@ function App() {
 
         {/* Skills Section */}
         <SkillsSection />
+
+        {/* Career Section */}
+        <CareerSection />
 
         {/* Projects Section */}
         <section id="projects" className="py-12 sm:py-16 md:py-20 px-4 sm:px-8">
