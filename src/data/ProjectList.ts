@@ -7,7 +7,6 @@ export const ProjectList : ProjectCardProps[] = [
         link: 'https://github.com/Trinankur002/Currency-Converter',
         demoLink: '', // Add if you have a live demo
         techs: ['React Native', 'JavaScript', 'REST API', 'AsyncStorage', 'Expo'],
-        image: '/projects/placeholder.svg', // Replace with actual screenshot
         category: 'mobile',
         status: 'completed',
         highlights: [
@@ -23,7 +22,6 @@ export const ProjectList : ProjectCardProps[] = [
         link: 'https://github.com/Trinankur002/E-Commerce-Backend',
         demoLink: '', // Add API documentation link if available
         techs: ['Node.js', 'Express.js', 'MongoDB', 'JWT', 'Bcrypt', 'Mongoose'],
-        image: '/projects/placeholder.svg',
         category: 'backend',
         status: 'completed',
         highlights: [
@@ -39,7 +37,6 @@ export const ProjectList : ProjectCardProps[] = [
         link: 'https://github.com/Trinankur002/Simple-Password-Generator',
         demoLink: '',
         techs: ['React Native', 'JavaScript', 'Crypto', 'AsyncStorage'],
-        image: '/projects/placeholder.svg',
         category: 'mobile',
         status: 'completed',
         highlights: [
@@ -55,7 +52,6 @@ export const ProjectList : ProjectCardProps[] = [
         link: 'https://github.com/Trinankur002/Easy_Notes',
         demoLink: '',
         techs: ['Android', 'Java', 'SQLite', 'Material Design', 'RecyclerView'],
-        image: '/projects/placeholder.svg',
         category: 'mobile',
         status: 'completed',
         highlights: [
@@ -71,7 +67,6 @@ export const ProjectList : ProjectCardProps[] = [
         link: 'https://github.com/Trinankur002/Take-Care',
         demoLink: '',
         techs: ['Kotlin', 'Jetpack Compose', 'Android', 'Room Database', 'MediaPlayer'],
-        image: '/projects/placeholder.svg',
         category: 'mobile',
         status: 'completed',
         highlights: [
@@ -87,7 +82,6 @@ export const ProjectList : ProjectCardProps[] = [
         link: 'https://github.com/Trinankur002/Portfolio',
         demoLink: window.location.origin, // Current portfolio
         techs: ['React', 'TypeScript', 'Tailwind CSS', 'Vite', 'CSS Animations'],
-        image: '/projects/placeholder.svg',
         category: 'frontend',
         status: 'completed',
         highlights: [
@@ -95,6 +89,36 @@ export const ProjectList : ProjectCardProps[] = [
             'Interactive skills section with filtering',
             'Smooth animations and transitions',
             'Contact form with email integration'
+        ]
+    },
+    {
+        name: 'Task Management API',
+        details: 'A comprehensive task management REST API with user authentication, project organization, and team collaboration features. Built with Node.js and MongoDB for scalable performance.',
+        link: 'https://github.com/Trinankur002/Task-Management-API',
+        demoLink: '',
+        techs: ['Node.js', 'Express.js', 'MongoDB', 'JWT', 'Bcrypt', 'Joi', 'Swagger'],
+        category: 'backend',
+        status: 'completed',
+        highlights: [
+            'Multi-user authentication and authorization',
+            'Project-based task organization',
+            'Real-time collaboration features',
+            'Comprehensive API documentation with Swagger'
+        ]
+    },
+    {
+        name: 'Weather Forecast App',
+        details: 'A React Native weather application providing detailed forecasts, location-based weather data, and interactive weather maps. Features offline caching and push notifications.',
+        link: 'https://github.com/Trinankur002/Weather-App',
+        demoLink: '',
+        techs: ['React Native', 'TypeScript', 'Weather API', 'AsyncStorage', 'Push Notifications'],
+        category: 'mobile',
+        status: 'in-progress',
+        highlights: [
+            'Location-based weather detection',
+            '7-day detailed weather forecast',
+            'Interactive weather maps and radar',
+            'Offline data caching and sync'
         ]
     },
 ]

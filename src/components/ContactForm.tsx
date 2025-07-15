@@ -101,8 +101,8 @@ function ContactForm({ recipientEmail }: ContactFormProps) {
   };
 
   return (
-    <div className="bg-gray-800 p-8 rounded-lg shadow-lg max-w-2xl mx-auto">
-      <form onSubmit={handleSubmit} className="space-y-6">
+    <div className="bg-gray-800 p-4 sm:p-6 md:p-8 rounded-lg shadow-lg max-w-2xl mx-auto">
+      <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
         {/* Name Field */}
         <div>
           <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
@@ -114,7 +114,7 @@ function ContactForm({ recipientEmail }: ContactFormProps) {
             name="name"
             value={formData.name}
             onChange={handleInputChange}
-            className={`w-full px-4 py-3 bg-gray-700 border rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-teal-400 focus:border-transparent transition-colors ${
+            className={`w-full px-3 sm:px-4 py-2 sm:py-3 bg-gray-700 border rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-teal-400 focus:border-transparent transition-colors text-sm sm:text-base ${
               errors.name ? 'border-red-500' : 'border-gray-600'
             }`}
             placeholder="Your full name"
@@ -133,7 +133,7 @@ function ContactForm({ recipientEmail }: ContactFormProps) {
             name="email"
             value={formData.email}
             onChange={handleInputChange}
-            className={`w-full px-4 py-3 bg-gray-700 border rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-teal-400 focus:border-transparent transition-colors ${
+            className={`w-full px-3 sm:px-4 py-2 sm:py-3 bg-gray-700 border rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-teal-400 focus:border-transparent transition-colors text-sm sm:text-base ${
               errors.email ? 'border-red-500' : 'border-gray-600'
             }`}
             placeholder="your.email@example.com"
@@ -152,7 +152,7 @@ function ContactForm({ recipientEmail }: ContactFormProps) {
             name="subject"
             value={formData.subject}
             onChange={handleInputChange}
-            className={`w-full px-4 py-3 bg-gray-700 border rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-teal-400 focus:border-transparent transition-colors ${
+            className={`w-full px-3 sm:px-4 py-2 sm:py-3 bg-gray-700 border rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-teal-400 focus:border-transparent transition-colors text-sm sm:text-base ${
               errors.subject ? 'border-red-500' : 'border-gray-600'
             }`}
             placeholder="What's this about?"
@@ -168,10 +168,10 @@ function ContactForm({ recipientEmail }: ContactFormProps) {
           <textarea
             id="message"
             name="message"
-            rows={6}
+            rows={4}
             value={formData.message}
             onChange={handleInputChange}
-            className={`w-full px-4 py-3 bg-gray-700 border rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-teal-400 focus:border-transparent transition-colors resize-vertical ${
+            className={`w-full px-3 sm:px-4 py-2 sm:py-3 bg-gray-700 border rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-teal-400 focus:border-transparent transition-colors resize-vertical text-sm sm:text-base ${
               errors.message ? 'border-red-500' : 'border-gray-600'
             }`}
             placeholder="Tell me about your project, question, or just say hello..."
@@ -184,7 +184,7 @@ function ContactForm({ recipientEmail }: ContactFormProps) {
           <button
             type="submit"
             disabled={isSubmitting}
-            className={`w-full py-3 px-6 rounded-lg font-medium transition-colors ${
+            className={`w-full py-2 sm:py-3 px-4 sm:px-6 rounded-lg text-sm sm:text-base font-medium transition-colors ${
               isSubmitting
                 ? 'bg-gray-600 text-gray-400 cursor-not-allowed'
                 : 'bg-teal-600 hover:bg-teal-700 text-white focus:outline-none focus:ring-2 focus:ring-teal-400 focus:ring-offset-2 focus:ring-offset-gray-800'
@@ -196,16 +196,16 @@ function ContactForm({ recipientEmail }: ContactFormProps) {
 
         {/* Status Messages */}
         {submitStatus === 'success' && (
-          <div className="p-4 bg-green-900/50 border border-green-700 rounded-lg">
-            <p className="text-green-300 text-sm">
+          <div className="p-3 sm:p-4 bg-green-900/50 border border-green-700 rounded-lg">
+            <p className="text-green-300 text-xs sm:text-sm">
               Your email client should open with the message pre-filled. If it doesn't, please copy the information and send it manually to {recipientEmail}.
             </p>
           </div>
         )}
 
         {submitStatus === 'error' && (
-          <div className="p-4 bg-red-900/50 border border-red-700 rounded-lg">
-            <p className="text-red-300 text-sm">
+          <div className="p-3 sm:p-4 bg-red-900/50 border border-red-700 rounded-lg">
+            <p className="text-red-300 text-xs sm:text-sm">
               There was an issue opening your email client. Please send your message directly to {recipientEmail}.
             </p>
           </div>
