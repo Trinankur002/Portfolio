@@ -2,6 +2,7 @@ import './App.css'
 import "tailwindcss";
 import { ProjectList } from './data/ProjectList';
 import Projectcard from './components/Projectcard';
+import ContactForm from './components/ContactForm';
 import { AboutMe } from './data/AboutMe';
 import { useEffect, useRef } from 'react';
 
@@ -119,9 +120,13 @@ function App() {
 
       {/* Contact Section */}
       <section id="contact" className="py-20 px-8">
-        <h3 className="text-3xl font-bold mb-6">Contact</h3>
-        <p className="text-gray-400">{`email: ` + `${AboutMe.email}`}</p>
-        {/* You could add a contact form here */}
+        <div className="max-w-screen-xl mx-auto">
+          <h3 className="text-3xl font-bold mb-8 text-center">Get In Touch</h3>
+          <p className="text-gray-400 text-center mb-8">
+            Have a project in mind or just want to say hello? I'd love to hear from you!
+          </p>
+          <ContactForm recipientEmail={AboutMe.email} />
+        </div>
       </section>
 
       {/* Footer */}
