@@ -40,7 +40,7 @@ function Projectcard({
     };
 
     return (
-        <div className="bg-gray-800 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 overflow-hidden group border border-gray-700 hover:border-gray-600 flex flex-col min-h-[400px]">
+        <div className="bg-gray-800 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 overflow-hidden group border border-gray-700 hover:border-gray-600 flex flex-col h-full">
             {/* Project Header with Category and Status */}
             <div className="flex justify-between items-center px-4 py-3 border-b border-gray-700 bg-gradient-to-r from-gray-800 to-gray-750 flex-shrink-0">
                 {/* Category Badge */}
@@ -61,24 +61,26 @@ function Projectcard({
                         {name}
                     </h4>
 
-                    <p className="text-sm sm:text-base text-gray-300 mb-3 sm:mb-4 leading-relaxed line-clamp-3">
+                    <p className="text-sm sm:text-base text-gray-300 mb-3 sm:mb-4 leading-relaxed line-clamp-3 min-h-[4.5rem]">
                         {details}
                     </p>
 
-                    {/* Highlights */}
-                    {highlights && highlights.length > 0 && (
-                        <div className="mb-3 sm:mb-4">
-                            <h5 className="text-xs sm:text-sm font-semibold text-teal-400 mb-1 sm:mb-2">Key Features:</h5>
-                            <ul className="text-xs sm:text-sm text-gray-400 space-y-1">
-                                {highlights.slice(0, 3).map((highlight, index) => (
-                                    <li key={index} className="flex items-start">
-                                        <span className="text-teal-400 mr-2">•</span>
-                                        {highlight}
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
-                    )}
+                    {/* Highlights - Fixed height section */}
+                    <div className="mb-3 sm:mb-4 min-h-[120px]">
+                        {highlights && highlights.length > 0 && (
+                            <>
+                                <h5 className="text-xs sm:text-sm font-semibold text-teal-400 mb-1 sm:mb-2">Key Features:</h5>
+                                <ul className="text-xs sm:text-sm text-gray-400 space-y-1">
+                                    {highlights.slice(0, 3).map((highlight, index) => (
+                                        <li key={index} className="flex items-start">
+                                            <span className="text-teal-400 mr-2">•</span>
+                                            {highlight}
+                                        </li>
+                                    ))}
+                                </ul>
+                            </>
+                        )}
+                    </div>
                 </div>
 
                 <div className="mt-auto">
