@@ -4,19 +4,34 @@ import { ProjectList } from './data/ProjectList';
 import Projectcard from './components/Projectcard';
 import ContactForm from './components/ContactForm';
 import SkillsSection from './components/SkillsSection';
+import TypewriterText from './components/TypewriterText';
 import { AboutMe } from './data/AboutMe';
 import { useEffect, useRef, useState } from 'react';
 
 function App() {
   const dotsRef = useRef<HTMLSpanElement>(null);
   const sectionRef = useRef<HTMLElement>(null);
+  const aboutSectionRef = useRef<HTMLElement>(null);
   const animationTimeout = useRef<number | null>(null);
   const [showAllProjects, setShowAllProjects] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
+  const [startTypewriter, setStartTypewriter] = useState(false);
+
+  // Reset animation state on page load/reload
+  useEffect(() => {
+    setStartTypewriter(false);
+    // Remove any existing animation classes
+    if (aboutSectionRef.current) {
+      aboutSectionRef.current.classList.remove('typewriter-animated');
+    }
+    if (sectionRef.current) {
+      sectionRef.current.classList.remove('animated');
+    }
+  }, []);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
+    const heroObserver = new IntersectionObserver(
       (entries) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
@@ -32,12 +47,33 @@ function App() {
       }
     );
 
+    const aboutObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            if (!aboutSectionRef.current?.classList.contains('typewriter-animated')) {
+              setStartTypewriter(true);
+              aboutSectionRef.current?.classList.add('typewriter-animated');
+            }
+          }
+        });
+      },
+      {
+        threshold: 0.3
+      }
+    );
+
     if (sectionRef.current) {
-      observer.observe(sectionRef.current);
+      heroObserver.observe(sectionRef.current);
+    }
+
+    if (aboutSectionRef.current) {
+      aboutObserver.observe(aboutSectionRef.current);
     }
 
     return () => {
-      observer.disconnect();
+      heroObserver.disconnect();
+      aboutObserver.disconnect();
       if (animationTimeout.current) {
         clearTimeout(animationTimeout.current);
       }
@@ -332,13 +368,42 @@ function App() {
         </section>
 
         {/* About Section */}
-        <section id="about" className="py-12 sm:py-16 md:py-20 px-4 sm:px-8 bg-gray-800/30">
+        <section ref={aboutSectionRef} id="about" className="py-12 sm:py-16 md:py-20 px-4 sm:px-8 bg-gray-800/30">
           <div className="max-w-4xl mx-auto text-center">
             <h3 className="text-3xl sm:text-4xl font-bold mb-6 sm:mb-8 text-white">About Me</h3>
             <div className="max-w-3xl mx-auto">
-              <p className="text-base sm:text-lg text-gray-300 leading-relaxed mb-6 sm:mb-8 px-2 sm:px-0">
-                {AboutMe.about}
-              </p>
+              <div className="text-base sm:text-lg text-gray-300 leading-relaxed mb-6 sm:mb-8 px-2 sm:px-0 min-h-[8rem] flex items-start justify-center">
+                <div className="terminal-window rounded-lg p-0 max-w-full w-full sm:max-w-3xl">
+                  <div className="terminal-header px-4 py-3 rounded-t-lg">
+                    <div className="flex items-center justify-between">
+                      <div className="flex space-x-2">
+                        <div className="terminal-dot w-3 h-3 rounded-full bg-red-500"></div>
+                        <div className="terminal-dot w-3 h-3 rounded-full bg-yellow-500"></div>
+                        <div className="terminal-dot w-3 h-3 rounded-full bg-green-500"></div>
+                      </div>
+                      <span className="text-sm text-gray-400 font-mono">~/about-me</span>
+                      <div className="w-12"></div> {/* Spacer for centering */}
+                    </div>
+                  </div>
+                  <div className="p-4 sm:p-6 text-left bg-black/20 rounded-b-lg">
+                    <div className="mb-3">
+                      <span className="text-teal-400 font-mono">$ </span>
+                      <span className="text-gray-300 font-mono">cat about.txt</span>
+                    </div>
+                    <div className="text-gray-300 font-mono text-sm sm:text-base leading-relaxed min-h-[4rem] overflow-hidden">
+                      <TypewriterText
+                        text={AboutMe.about}
+                        speed={30}
+                        startDelay={1500}
+                        showCursor={true}
+                        cursorChar="|"
+                        className=""
+                        startAnimation={startTypewriter}
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 mt-8 sm:mt-12">
                 <div className="text-center">
                   <div className="w-12 h-12 sm:w-16 sm:h-16 bg-teal-600 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">

@@ -102,3 +102,50 @@ html {
     transform: translateY(20px);
     transition: opacity 300ms, transform 300ms;
 }
+
+/* Terminal styling for typewriter */
+.terminal-window {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+    border: 1px solid #404040;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.terminal-header {
+    background: linear-gradient(90deg, #3a3a3a 0%, #2a2a2a 100%);
+    border-bottom: 1px solid #404040;
+}
+
+.terminal-dot {
+    transition: all 0.2s ease;
+}
+
+.terminal-dot:hover {
+    transform: scale(1.1);
+}
+
+/* Typewriter cursor animation */
+@keyframes typewriter-cursor {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+}
+
+.typewriter-cursor {
+    animation: typewriter-cursor 1s infinite;
+}
+
+/* Typewriter text styling */
+.typewriter-text {
+    display: inline;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    word-break: normal;
+    line-height: 1.7;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.typewriter-container {
+    overflow-wrap: break-word;
+    word-break: normal;
+    hyphens: none;
+    font-family: 'Courier New', Courier, monospace;
+}
