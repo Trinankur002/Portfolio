@@ -21,8 +21,8 @@ export const useTypewriter = ({
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isComplete, setIsComplete] = useState(false);
   const [showCursorState, setShowCursorState] = useState(true);
-  const timeoutRef = useRef<NodeJS.Timeout>();
-  const cursorTimeoutRef = useRef<NodeJS.Timeout>();
+  const timeoutRef = useRef<number | null>(null);
+  const cursorTimeoutRef = useRef<number | null>(null);
 
   useEffect(() => {
     // Reset state when text changes

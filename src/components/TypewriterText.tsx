@@ -22,7 +22,7 @@ const TypewriterText: React.FC<TypewriterTextProps> = ({
   onComplete,
   startAnimation = true
 }) => {
-  const { displayText, isComplete } = useTypewriter({
+  const { displayText } = useTypewriter({
     text: startAnimation ? text : '',
     speed,
     startDelay,
