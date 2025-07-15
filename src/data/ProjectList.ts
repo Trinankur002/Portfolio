@@ -2,34 +2,99 @@ import { ProjectCardProps } from "../components/Projectcard";
 
 export const ProjectList : ProjectCardProps[] = [
     {
-        name: 'Currency-Converter',
-        details: 'Developed a cross-platform currency converter app using React Native.  It fetches real-time exchange rates, allows users to convert between multiple currencies, and features a clean, intuitive user interface for seamless currency calculations on the go.',
+        name: 'Currency Converter',
+        details: 'A cross-platform mobile application that provides real-time currency conversion with an intuitive user interface. Features live exchange rates, offline support, and conversion history.',
         link: 'https://github.com/Trinankur002/Currency-Converter',
+        demoLink: '', // Add if you have a live demo
+        techs: ['React Native', 'JavaScript', 'REST API', 'AsyncStorage', 'Expo'],
+        image: '/projects/placeholder.svg', // Replace with actual screenshot
+        category: 'mobile',
+        status: 'completed',
+        highlights: [
+            'Real-time exchange rate fetching from multiple APIs',
+            'Offline currency conversion with cached rates',
+            'Clean, intuitive UI with smooth animations',
+            'Conversion history and favorite currencies'
+        ]
     },
     {
-        name: 'E-Commerce-Backend',
-        details: 'Designed and implemented a backend API for a simplified e-commerce platform. Built with nodejs express mainly and a MongoDb database, it handles product management, user authentication, shopping cart functionality, and order processing.',
+        name: 'E-Commerce Backend API',
+        details: 'A robust RESTful API backend for e-commerce platforms built with Node.js and Express. Handles user authentication, product management, shopping cart, and order processing with MongoDB.',
         link: 'https://github.com/Trinankur002/E-Commerce-Backend',
+        demoLink: '', // Add API documentation link if available
+        techs: ['Node.js', 'Express.js', 'MongoDB', 'JWT', 'Bcrypt', 'Mongoose'],
+        image: '/projects/placeholder.svg',
+        category: 'backend',
+        status: 'completed',
+        highlights: [
+            'Secure JWT-based authentication system',
+            'Complete CRUD operations for products and users',
+            'Shopping cart and order management',
+            'Input validation and error handling'
+        ]
     },
     {
-        name: 'Simple-Password-Generator',
-        details: 'Created a secure password generator app with React Native.  It allows users to generate strong, customizable passwords with various options for character types and length, promoting better online security practices.',
+        name: 'Password Generator',
+        details: 'A secure password generation mobile app with customizable options for creating strong passwords. Features multiple character sets, length options, and password strength indicators.',
         link: 'https://github.com/Trinankur002/Simple-Password-Generator',
+        demoLink: '',
+        techs: ['React Native', 'JavaScript', 'Crypto', 'AsyncStorage'],
+        image: '/projects/placeholder.svg',
+        category: 'mobile',
+        status: 'completed',
+        highlights: [
+            'Customizable password length and character sets',
+            'Password strength indicator and security tips',
+            'Copy to clipboard functionality',
+            'Password history with secure storage'
+        ]
     },
     {
         name: 'Easy Notes',
-        details: 'Developed a simple notes app for Android, allowing users to create, save, and manage text-based notes.  Features include a clean UI for easy note creation and browsing, and local storage for offline access to notes.',
+        details: 'A clean and simple note-taking Android application with local storage. Features include note creation, editing, deletion, and search functionality with a material design interface.',
         link: 'https://github.com/Trinankur002/Easy_Notes',
+        demoLink: '',
+        techs: ['Android', 'Java', 'SQLite', 'Material Design', 'RecyclerView'],
+        image: '/projects/placeholder.svg',
+        category: 'mobile',
+        status: 'completed',
+        highlights: [
+            'Local SQLite database for offline access',
+            'Search and filter notes functionality',
+            'Material Design UI components',
+            'Note categorization and tagging'
+        ]
     },
     {
-        name: 'Take Care',
-        details: 'Built a meditation app for Android using Kotlin and Jetpack Compose.  Features include guided meditations, customizable timers, calming soundscapes, and progress tracking to promote mindfulness and relaxation.',
+        name: 'Take Care - Meditation App',
+        details: 'A mindfulness and meditation Android app built with Kotlin and Jetpack Compose. Offers guided meditations, breathing exercises, progress tracking, and calming soundscapes.',
         link: 'https://github.com/Trinankur002/Take-Care',
+        demoLink: '',
+        techs: ['Kotlin', 'Jetpack Compose', 'Android', 'Room Database', 'MediaPlayer'],
+        image: '/projects/placeholder.svg',
+        category: 'mobile',
+        status: 'completed',
+        highlights: [
+            'Guided meditation sessions with audio',
+            'Breathing exercise timer with animations',
+            'Progress tracking and streak counters',
+            'Calming background sounds and music'
+        ]
     },
     {
-        name: 'Portfolio',
-        details: 'This is my portfolio build with react , tailwind ',
+        name: 'Portfolio Website',
+        details: 'A modern, responsive portfolio website built with React and TypeScript. Features smooth animations, dark theme, contact form, and showcases projects and skills professionally.',
         link: 'https://github.com/Trinankur002/Portfolio',
+        demoLink: window.location.origin, // Current portfolio
+        techs: ['React', 'TypeScript', 'Tailwind CSS', 'Vite', 'CSS Animations'],
+        image: '/projects/placeholder.svg',
+        category: 'frontend',
+        status: 'completed',
+        highlights: [
+            'Responsive design with modern UI/UX',
+            'Interactive skills section with filtering',
+            'Smooth animations and transitions',
+            'Contact form with email integration'
+        ]
     },
-
 ]

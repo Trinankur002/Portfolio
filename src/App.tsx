@@ -3,13 +3,15 @@ import "tailwindcss";
 import { ProjectList } from './data/ProjectList';
 import Projectcard from './components/Projectcard';
 import ContactForm from './components/ContactForm';
+import SkillsSection from './components/SkillsSection';
 import { AboutMe } from './data/AboutMe';
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 function App() {
   const dotsRef = useRef<HTMLSpanElement>(null);
   const sectionRef = useRef<HTMLElement>(null);
   const animationTimeout = useRef<number | null>(null);
+  const [showAllProjects, setShowAllProjects] = useState(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -70,7 +72,7 @@ function App() {
 
 
   return (
-    <div className="bg-gray-900 text-white min-h-screen font-mono">
+    <div className="bg-gray-900 text-white min-h-screen font-mono max-w-dvw ">
       {/* Header */}
       <header className="sticky top-0 py-4 px-8 flex justify-between items-center border-b border-gray-700 bg-gray-900/95 backdrop-blur-sm z-50 transition-all duration-300">
         <div className="flex items-center space-x-3">
@@ -107,6 +109,14 @@ function App() {
                 className="text-gray-300 hover:text-teal-400 transition-colors duration-300 font-medium"
               >
                 About
+              </a>
+            </li>
+            <li>
+              <a
+                href="#skills"
+                className="text-gray-300 hover:text-teal-400 transition-colors duration-300 font-medium"
+              >
+                Skills
               </a>
             </li>
             <li>
@@ -290,14 +300,94 @@ function App() {
           </div>
         </section>
 
+        {/* Skills Section */}
+        <SkillsSection />
+
         {/* Projects Section */}
         <section id="projects" className="py-20 px-8">
-          <h3 className="text-3xl font-bold mb-6">Projects</h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="max-w-7xl mx-auto">
+            <div className="text-center mb-16">
+              <h3 className="text-4xl font-bold text-white mb-4">Featured Projects</h3>
+              <p className="text-lg text-gray-300 max-w-2xl mx-auto">
+                A showcase of my recent work spanning mobile applications, backend systems, and web development
+              </p>
+              <div className="inline-flex items-center justify-center bg-gray-700 rounded-full px-4 py-1 text-sm text-teal-400 font-medium mt-4">
+                {ProjectList.length} Projects Completed
+              </div>
+            </div>
 
-            {ProjectList.map((project, index) => {
-              return <Projectcard key={index} {...project} />
-            })}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              {(showAllProjects ? ProjectList : ProjectList.slice(0, 4)).map((project, index) => (
+                <div
+                  key={index}
+                  className="animate-fadeInUp"
+                  style={{ animationDelay: `${index * 0.1}s` }}
+                >
+                  <Projectcard {...project} />
+                </div>
+              ))}
+            </div>
+
+            {/* Show More/Less Button */}
+            {ProjectList.length > 4 && (
+              <div className="text-center mt-10">
+                <button
+                  onClick={() => setShowAllProjects(!showAllProjects)}
+                  className={`px-8 py-3 font-semibold rounded-full transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-2 mx-auto ${
+                    showAllProjects
+                      ? 'bg-gray-700 text-teal-400 border border-teal-400 hover:bg-gray-600'
+                      : 'bg-teal-600 hover:bg-teal-700 text-white'
+                  }`}
+                >
+                  {showAllProjects ? (
+                    <>
+                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 15l7-7 7 7" />
+                      </svg>
+                      <span>Show Less</span>
+                      <span className="ml-1 bg-gray-600 text-white text-xs px-2 py-1 rounded-full">
+                        {ProjectList.length}/{ProjectList.length}
+                      </span>
+                    </>
+                  ) : (
+                    <>
+                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                      </svg>
+                      <span>Show All Projects</span>
+                      <span className="ml-1 bg-teal-500 text-white text-xs px-2 py-1 rounded-full">
+                        +{ProjectList.length - 4} more
+                      </span>
+                    </>
+                  )}
+                </button>
+              </div>
+            )}
+
+            {/* Call to Action */}
+            <div className="text-center mt-16">
+              <div className="bg-gray-800 rounded-xl p-8 max-w-2xl mx-auto">
+                <h4 className="text-2xl font-bold text-white mb-4">Interested in Working Together?</h4>
+                <p className="text-gray-300 mb-6">
+                  I'm always open to discussing new opportunities and exciting projects.
+                  Let's build something amazing together!
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <a
+                    href="#contact"
+                    className="px-8 py-3 bg-teal-600 hover:bg-teal-700 text-white font-semibold rounded-lg transition-all duration-300 transform hover:scale-105"
+                  >
+                    Get In Touch
+                  </a>
+                  <a
+                    href={`mailto:${AboutMe.email}`}
+                    className="px-8 py-3 border-2 border-teal-400 text-teal-400 hover:bg-teal-400 hover:text-gray-900 font-semibold rounded-lg transition-all duration-300 transform hover:scale-105"
+                  >
+                    Send Email
+                  </a>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
       </div>
