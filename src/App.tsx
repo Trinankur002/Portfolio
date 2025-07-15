@@ -115,7 +115,7 @@ function App() {
       {/* Header */}
       <header className="sticky top-0 py-4 px-4 sm:px-8 flex justify-between items-center border-b border-gray-700 bg-gray-900/95 backdrop-blur-sm z-50 transition-all duration-300">
         <div className="flex items-center space-x-3">
-          <div className="w-10 h-10 rounded-lg overflow-hidden ring-2 ring-teal-400/30">
+          <div className="w-10 h-10 rounded-4xl overflow-hidden ring-2 ring-teal-400/30">
             <img
               src="/profile-photo.jpg"
               alt={`${AboutMe.name} - Profile Photo`}
