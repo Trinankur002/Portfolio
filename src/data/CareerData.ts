@@ -19,9 +19,9 @@ export const CareerData: WorkExperience[] = [
     position: 'Full Stack Developer',
     company: 'OMX Digital',
     location: 'Siliguri',
-    duration: 'Apr 2025 - Present',
+    duration: 'Apr 2025 - Jul 2025',
     startDate: '2025-04',
-    endDate: 'present',
+    endDate: '2025-07',
     type: 'full-time',
     description: [
       'Specialized in crafting robust web applications from conception to deployment.',
