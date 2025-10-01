@@ -341,6 +341,7 @@ function App() {
               <a
                 href="/resume.pdf"
                 target="_blank"
+                // download="Trinankur_Atarthi_Resume.pdf"
                 rel="noopener noreferrer"
                 className="px-6 sm:px-8 py-3 sm:py-4 bg-gray-700 hover:bg-gray-600 text-white font-semibold rounded-lg transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-2"
               >

@@ -92,33 +92,24 @@ export const ProjectList : ProjectCardProps[] = [
         ]
     },
     {
-        name: 'Task Management API',
-        details: 'A comprehensive task management REST API with user authentication, project organization, and team collaboration features. Built with Node.js and MongoDB for scalable performance.',
-        link: 'https://github.com/Trinankur002/Task-Management-API',
-        demoLink: '',
-        techs: ['Node.js', 'Express.js', 'MongoDB', 'JWT', 'Bcrypt', 'Joi', 'Swagger'],
-        category: 'backend',
+        name: 'Classroom Hub',
+        details: 'Classroom Hub is a full-stack web application designed to streamline classroom management and communication. It provides a centralized platform for teachers and students to interact, share materials, and manage assignments.',
+        link: 'https://github.com/Trinankur002/classroom-hub',
+        demoLink: 'https://classroom-hub.vercel.app/',
+        techs: ['React', 'TypeScript', 'Postgresql', 'NestJS', 'Push Notifications'],
+        category: 'fullstack',
         status: 'completed',
-        highlights: [
-            'Multi-user authentication and authorization',
-            'Project-based task organization',
-            'Real-time collaboration features',
-            'Comprehensive API documentation with Swagger'
-        ]
-    },
-    {
-        name: 'Weather Forecast App',
-        details: 'A React Native weather application providing detailed forecasts, location-based weather data, and interactive weather maps. Features offline caching and push notifications.',
-        link: 'https://github.com/Trinankur002/Weather-App',
-        demoLink: '',
-        techs: ['React Native', 'TypeScript', 'Weather API', 'AsyncStorage', 'Push Notifications'],
-        category: 'mobile',
-        status: 'in-progress',
-        highlights: [
-            'Location-based weather detection',
-            '7-day detailed weather forecast',
-            'Interactive weather maps and radar',
-            'Offline data caching and sync'
+        "highlights": [
+            "Role-Based Access Control (Teacher/Student) with Secure JWT Authentication",
+            "Personalized Dashboards for a Quick Overview of Classes and Deadlines",
+            "Complete Classroom Management (Creation, Joining, and Student Rosters)",
+            "Dedicated Workflow for Assignment Creation, Viewing, and Submission Tracking",
+            "Real-time Communication via One-on-One/Group Chat and Instant Notifications",
+            "Threaded Doubt Solving Forum for Q&A and Concept Clarification",
+            "Announcement System with Commenting and File Attachment Capabilities",
+            "File Sharing for Assignments and Announcements",
+            "Responsive Design for a Seamless Experience Across All Devices",
+            "Profile and Account Management for all Users"
         ]
     },
 ]
