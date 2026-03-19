@@ -1,6 +1,27 @@
 import { ProjectCardProps } from "../components/Projectcard";
 
-export const ProjectList : ProjectCardProps[] = [
+export const ProjectList: ProjectCardProps[] = [
+    {
+        name: 'Classroom Hub',
+        details: 'Classroom Hub is a full-stack web application designed to streamline classroom management and communication. It provides a centralized platform for teachers and students to interact, share materials, and manage assignments.',
+        link: 'https://github.com/Trinankur002/classroom-hub',
+        demoLink: 'https://classroom-hub.vercel.app/',
+        techs: ['React', 'TypeScript', 'Postgresql', 'NestJS', 'Push Notifications'],
+        category: 'fullstack',
+        status: 'completed',
+        "highlights": [
+            "Role-Based Access Control (Teacher/Student) with Secure JWT Authentication",
+            "Personalized Dashboards for a Quick Overview of Classes and Deadlines",
+            "Complete Classroom Management (Creation, Joining, and Student Rosters)",
+            "Dedicated Workflow for Assignment Creation, Viewing, and Submission Tracking",
+            "Real-time Communication via One-on-One/Group Chat and Instant Notifications",
+            "Threaded Doubt Solving Forum for Q&A and Concept Clarification",
+            "Announcement System with Commenting and File Attachment Capabilities",
+            "File Sharing for Assignments and Announcements",
+            "Responsive Design for a Seamless Experience Across All Devices",
+            "Profile and Account Management for all Users"
+        ]
+    },
     {
         name: 'Currency Converter',
         details: 'A cross-platform mobile application that provides real-time currency conversion with an intuitive user interface. Features live exchange rates, offline support, and conversion history.',
@@ -91,25 +112,5 @@ export const ProjectList : ProjectCardProps[] = [
             'Contact form with email integration'
         ]
     },
-    {
-        name: 'Classroom Hub',
-        details: 'Classroom Hub is a full-stack web application designed to streamline classroom management and communication. It provides a centralized platform for teachers and students to interact, share materials, and manage assignments.',
-        link: 'https://github.com/Trinankur002/classroom-hub',
-        demoLink: 'https://classroom-hub.vercel.app/',
-        techs: ['React', 'TypeScript', 'Postgresql', 'NestJS', 'Push Notifications'],
-        category: 'fullstack',
-        status: 'completed',
-        "highlights": [
-            "Role-Based Access Control (Teacher/Student) with Secure JWT Authentication",
-            "Personalized Dashboards for a Quick Overview of Classes and Deadlines",
-            "Complete Classroom Management (Creation, Joining, and Student Rosters)",
-            "Dedicated Workflow for Assignment Creation, Viewing, and Submission Tracking",
-            "Real-time Communication via One-on-One/Group Chat and Instant Notifications",
-            "Threaded Doubt Solving Forum for Q&A and Concept Clarification",
-            "Announcement System with Commenting and File Attachment Capabilities",
-            "File Sharing for Assignments and Announcements",
-            "Responsive Design for a Seamless Experience Across All Devices",
-            "Profile and Account Management for all Users"
-        ]
-    },
+    
 ]
